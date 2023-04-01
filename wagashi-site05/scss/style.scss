@@ -310,10 +310,8 @@ h1{
         //最大34pxで500px以下から20px
         //20÷500×100=4
         font-size: clamp(20px,4vw,34px);
-        height: 50vh;
+        height: 60vh;
         margin: 200px 50px;
-        
-
     }
 
     p{
