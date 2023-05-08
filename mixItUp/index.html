@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>フィルタリングとモーダルウィンドウの実装</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+</head>
+
+<body>
+    <h1>フィルタリングとモーダルウィンドウの実装</h1>
+
+    <div class="btn-wrapper">
+        <button class="cate-btn" data-filter="all">全て</button>
+        <button class="cate-btn" data-filter=".cate-1">音楽</button>
+        <button class="cate-btn" data-filter=".cate-2">飴</button>
+        <button class="cate-btn" data-filter=".cate-3">料理</button>
+        <button class="cate-btn" data-filter=".cate-4">Webサイト</button>
+    </div>
+
+    <div class="thumb-wrapper">
+
+        <!-- 音楽 -->
+        <div class="mix cate-1">
+            <a href="https://youtu.be/zkNzxsaCunU" data-fancybox>
+                <h2>米津玄師 - 春雷 Kenshi Yonezu - Shunrai</h2>
+                <img src="img/1-1-1.jpg" alt="">
+            </a>
+        </div><!-- /.mix -->
+
+        <div class="mix cate-1">
+            <a href="https://youtu.be/9_ifx-Dmv9g" data-fancybox>
+                <h2>[Official Music Video] Perfume「VOICE」</h2>
+                <img src="img/1-2-2.jpg" alt="">
+            </a>
+        </div><!-- /.mix -->
+
+        <div class="mix cate-1">
+            <a href="https://youtu.be/ony539T074w" data-fancybox>
+                <h2>King Gnu - 白日</h2>
+                <img src="img/1-3.jpg" alt="">
+            </a>
+        </div><!-- /.mix -->
+
+
+        <!-- 飴 -->
+        <div class="mix cate-2">
+            <a href="https://youtu.be/SoidVQsr9L0" data-fancybox>
+                <h2>【製造風景】京の露(べっこう飴)の作り方</h2>
+                <img src="img/2-1.jpg" alt="">
+            </a>
+        </div><!-- /.mix -->
+
+        <div class="mix cate-2">
+            <a href="https://youtu.be/OCWO3xnDsiU" data-fancybox>
+                <h2>【製造風景】錦玉の作り方　飴／キャンディ</h2>
+                <img src="img/2-2.jpg" alt="">
+            </a>
+        </div><!-- /.mix -->
+
+        <div class="mix cate-2">
+            <a href="https://youtu.be/Ml7U5zD-XDY" data-fancybox>
+                <h2>【製造風景】フィッシュドロップスの作り方</h2>
+                <img src="img/2-3.jpg" alt="">
+            </a>
+        </div><!-- /.mix -->
+
+
+        <!-- 料理 -->
+        <div class="mix cate-3">
+            <a href="https://youtu.be/usCtsNBuRSE" data-fancybox>
+                <h2>カリサックでふわり【出したら５分で無くなります】カリカリ茄子。</h2>
+                <img src="img/3-1.jpg" alt="">
+            </a>
+        </div><!-- /.mix -->
+
+        <div class="mix cate-3">
+            <a href="https://youtu.be/GypsxM7aji8" data-fancybox>
+                <h2>友人に今までの大根料理で一番ウマいと絶賛された最高傑作です。無限サクサク大根</h2>
+                <img src="img/3-2.jpg" alt="">
+            </a>
+        </div><!-- /.mix -->
+
+        <div class="mix cate-3">
+            <a href="https://youtu.be/FGyeSsW_vCU" data-fancybox>
+                <h2>食費1000円で作る25歳OLの一人暮らしごはん</h2>
+                <img src="img/3-3.jpg" alt="">
+            </a>
+        </div><!-- /.mix -->
+
+        <!-- 和あそび -->
+        <div class="mix cate-4">
+            <a href="javascript:;" data-fancybox data-type="iframe" data-src="site-01/index.html">
+                <h2>和菓子屋 和あそび</h2>
+                <img src="img/site01.jpg" alt="">
+            </a>
+        </div><!-- /.mix -->
+        <!-- 和あそびここまで -->
+
+        <!-- 日本の四季 -->
+        <div class="mix cate-4">
+            <a href="javascript:;" data-fancybox data-type="iframe" data-src="site-02/index.html">
+                <h2>日本の四季</h2>
+                <img src="img/season-top.jpg" alt="">
+            </a>
+        </div><!-- /.mix -->
+        <!-- 日本の四季ここまで -->
+
+        <!-- 枝豆 -->
+        <div class="mix cate-4">
+            <a href="javascript:;" data-fancybox data-type="iframe" data-src="site-03/index.html">
+                <h2>枝豆</h2>
+                <img src="img/site-03.jpg" alt="">
+            </a>
+        </div><!-- /.mix -->
+        <!-- 枝豆ここまで -->
+
+    </div><!-- /.thumb-wrapper -->
+
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js' integrity='sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==' crossorigin='anonymous'></script>
+
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+    <script src="js/mixitup.js"></script>
+
+    <script>
+        var mixer = mixitup('.thumb-wrapper');/* 全部のサムネイルが入っている要素を指定 */
+    </script>
+
+</body>
+</html>
