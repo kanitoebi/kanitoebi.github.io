@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweet Box|申し込みページ</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mansalva&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <h1>Sweet Box</h1>
+        <p class="tag-line">おうちで楽しむ新しいスイーツ体験</p>
+        <p id="ham-btn"><span></span></p>
+    </header>
+    
+    <nav id="g-nav">
+        <ul>
+            <li><a href="../">トップ</a></li>
+            <li><a href="../index.html#item">商品情報</a></li><!-- ページ内リンク -->
+            <li><a href="../index.html#flow">ご登録の流れ</a></li><!-- 他ページの特定の場所にリンクしたい場合はそのフォルダ名に続けてid名を入れる。 -->
+            <li><a href="../index.html#shop">スイーツ店の紹介</a></li>
+            <li><a href="../index.html#news">お知らせ</a></li>
+            <li><a href="../question/">よくある質問</a></li><!-- 別ページへのリンク -->
+            <li><a href="#">お申し込み</a></li>
+        </ul>
+    </nav>
+
+    <div class="form-wrapper">
+
+        <h2>お申込み</h2>
+        <ul class="form-step">
+            <li class="current">Step1<span>情報の入力</span></li>
+            <li>Step2<span>入力内容の確認</span></li>
+            <li>Step3<span>送信完了</span></li>
+        </ul>
+
+        <form action="confirm.php" method="post">
+            <dl>
+                <dt>お名前</dt>
+                <dd><input type="text" name="onamae" required placeholder="お名前を記入してください" autocomplete="name"></dd><!-- Wordpressで名前をnameにするとエラーになるのでonamae -->
+                <dt>メールアドレス</dt>
+                <dd><input type="email" name="email" required placeholder="メールアドレスを入力してください"></dd>
+                <dt>性別<span>任意</span></dt>
+                <dd>
+                    <label for="male">
+                        <input id="male" type="radio" name="gender" value="男性">男性
+                    </label>
+                    
+                    <label for="female">
+                        <input id="female" type="radio" name="gender" value="女性">女性
+                    </label>
+                </dd>
+                <dt>お問い合わせ内容</dt>
+                <dd><textarea name="message" required></textarea></dd>
+            </dl>
+
+            <input type="submit" value="確認画面へ">
+
+        </form>
+
+    </div><!-- form-wrapper -->
+        
+
+    <footer>
+        <p><small>&copy; <span id="this-year"></span> Sweet Box</small></p>
+    </footer>
+</body>
+</html>

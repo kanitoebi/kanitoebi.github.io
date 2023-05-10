@@ -1,0 +1,717 @@
+@use "_reset.scss";
+
+//変数の登録
+//カラーの登録
+$color_1:#e4dbc7;
+$color_2:#f6f1e5;
+$color_3:#baaf9e;
+$color_4:#ffe7c4;
+$to_form:#f3d894;
+$color_txt:#625b58;
+
+//フォントの登録
+$font_1:'Mansalva', cursive;
+
+//ブレイクポイントの登録
+$tablet-point:767px;
+$sp-point:500px;
+
+//mixinの登録
+@mixin tab{
+    @media (max-width:$tablet-point){
+        @content;
+    }
+}
+
+@mixin sp{
+    @media (max-width:$sp-point){
+        @content;
+    }
+}
+
+//pcレイアウト
+body{
+    color: $color_txt;
+}
+
+header{
+    width: 100%;
+    height: 100px;
+    background-color: $color_1;
+    display: flex;
+    align-items: center;
+    padding: 0 40px;
+    position: sticky;//sticyだと下の要素が潜り込まない
+    top: 0;
+    left: 0;
+    z-index: 10000;
+
+
+h1{
+    font-family: $font_1;
+    font-size: 46px;
+    margin-right: 30px;
+}/* h1 */
+
+//ハンバーガーメニュー
+#ham-btn{
+    width: 60px;
+    height: 60px;
+    background-color: #fff;
+    border-radius: 50%;
+    margin-left: auto;/*header内の要素の内、#ham-btnのみ右寄せになる */
+    position: relative;/* 位置の設定。この後子要素で設定。 */
+        span{
+            display: block;
+            width: 30px;
+            height: 3px;
+            background-color: $color_txt;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            margin: auto;
+            border-radius: 3px;
+            transition: 0.1s;
+
+            &::before{
+                display: block;
+                content: "";
+                width: 30px;
+                height: 3px;
+                background-color: $color_txt;
+                position: absolute;
+                top: -20px;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                margin: auto;
+                border-radius: 3px;
+            }
+    
+            &::after{
+                display: block;
+                content: "";
+                width: 30px;
+                height: 3px;
+                background-color: $color_txt;
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: -20px;
+                left: 0;
+                margin: auto;
+                border-radius: 3px;
+                transition: 0.2s;
+            }
+        }/* span */
+}/* /#ham-btn */
+
+#ham-btn.is-active>span{
+    background-color: transparent;
+    &::before{
+        top: 0;
+        transform: rotate(45deg);
+
+    }
+    &::after{
+        bottom: 0;
+        transform: rotate(135deg);
+    }
+
+}/* #ham-btn.is-active>span */
+//ハンバーガーメニューここまで
+
+}/* headerここまで */
+
+/* ナビゲーション部分 */
+#g-nav{
+    display: none;
+    width: 100%;
+    height: calc(100vh - 100px);
+    background-color: $color_4;
+    position: fixed;
+    top: 100px;
+    left:0;
+    z-index: 10000;
+    padding: 5% 20%;
+
+    li{
+        margin-bottom: 20px;
+        
+        a{
+            display: block;
+            color: $color_txt;
+            border-bottom: 2px solid $color_txt;
+            padding: 6px 0 6px 50px;
+
+            &:hover{
+                color: #000;
+                font-weight: bold;
+                border-bottom: 2px solid #000;
+            }
+        }
+
+        &:nth-of-type(6)>a{
+            background: url(../img/question-icon.svg) no-repeat 10px 0/30px;
+        }
+
+        &:nth-of-type(7)>a{
+            background: url(../img/mail-icon.svg) no-repeat 10px 0/30px;
+        }
+
+
+    }
+
+    
+}//ここまでナビゲーション部分
+
+/* to-formボタン部分 常に下に固定 */
+.to-form{
+    width: 260px;
+    height: 50px;
+    background-color: $to_form;
+    border-radius: 100px;
+    position: fixed;
+    right: 0;
+    left: 0;
+    bottom: 50px;
+    margin: auto;
+    z-index: 9999;
+    box-shadow: 0 0 6px #3c3a3a;
+
+    a{
+        display: block;
+        text-align: center;
+        line-height: 50px;
+        color: $color_txt;
+
+        &::before{
+            display: inline-block;
+            content: "";
+            width: 26px;
+            height: 26px;
+            background: url(../img/mail-icon.svg) no-repeat center center/contain;
+            margin-right: 10px;
+            position: relative;
+            top: 6px;
+        }
+    }
+}/* /.to-form */
+
+//main-visual部分
+.main-visual{
+    width: 100%;
+    height: 80vh;
+    
+    img{
+        object-fit: cover;
+        object-position: center center;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+//アイテム部分
+#item{
+    position: relative;
+
+    &::before{
+        width: 100%;
+        height: 180px;
+        display: block;
+        content: "";
+        background: url(../img/header.svg) no-repeat center center/cover;
+        position: absolute;
+        top: -180px;
+        left: 0;
+    }
+
+}/* /#item */
+
+.lead{
+    text-align: center;
+    padding: 20px 60px 120px;
+    
+    @include sp(){
+        padding: 120px 10px;
+    }
+
+    h2{
+        //最大34pxで500px以下から20px
+        //20÷500×100=4
+        font-size: clamp(20px,4vw,34px);
+        margin-bottom: 30px;
+
+        span{
+            font-family: $font_1;
+            margin: 0 .2em;
+        }
+    }
+
+    p{
+        line-height: 3;
+        @include sp(){
+            line-height: 2;
+        }
+    }
+
+}/* /.lead */
+
+//ギャラリー部分
+#item-photo{
+    width: 80%;
+    margin: 0 auto 100px;
+    display: flex;
+    gap: 120px 40px; //縦、横の余白
+    flex-wrap: wrap;
+    
+    li{
+        width: calc((100% - 80px) / 3);
+        height: 240px;
+        position: relative;
+        overflow: hidden;
+        
+        /* background-color: #50d7c9; */
+
+        &:nth-of-type(3n+1){
+            margin-top: -50px;
+        }
+
+        &:nth-of-type(3n){
+            margin-top: 50px;
+        }
+
+        img{
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+            border-radius: 20px;
+            }
+
+        &::after{
+            display: block;
+            content: "";
+            width: 100%;
+            height: 100%;
+            background-color: $color_1;
+            border-radius: 20px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 10;
+        }
+
+    }/* /li */
+
+    li.move::after{
+        transform: translate(100%,0);
+        transition: 0.4s;
+    }
+}/* ここまで#item-photo */
+
+
+//背景画像をattachment
+.bg-1{
+    width: 100%;
+    height: 80vh;
+    background: url(../img/bg01-2.jpg) no-repeat center center/cover fixed;//fixedで固定。iPhoneでは見れない。
+}
+
+.bg-2{
+    width: 100%;
+    height: 80vh;
+    background: url(../img/bg02-2.jpg) no-repeat center center/cover fixed;
+}
+
+//料金部分
+#flow{
+    background-color: $color_2;
+    position: relative;
+    overflow: hidden;
+    padding: 100px 10px;
+
+    .price{
+        max-width: 400px;
+        margin: 0 auto 160px;
+        padding: 40px;
+        background-color: #ffffffd4;
+        text-align: center;
+        position: relative;
+        z-index: 2;
+
+        a{
+            color: $color_txt;
+            &:hover>p:nth-of-type(4){
+                text-decoration: underline 4px #da933c;
+                text-underline-offset: 4px;
+            }
+        }
+
+        p:nth-of-type(1){
+            font-size: 24px;
+            color: #c2a353;
+            margin-bottom: 20px;
+            
+        }
+
+        p:nth-of-type(2){
+            font-size: 38px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #3c3a3a;
+            span{
+                font-size: 24px;
+                margin: 0 6px;
+                color: $color_txt;
+            }
+        }
+        
+        p:nth-of-type(3){
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #c2a353;
+        }
+    }
+
+    .flow-step{
+        position: relative;
+        z-index: 2;
+
+        h2{
+            text-align: center;
+            font-size: 30px;
+            margin-bottom: 40px;
+        }
+
+        .step-wrapper{
+            width: 80%;
+            display: flex;
+            justify-content: space-between;
+            margin: 0 auto 100px;
+
+            .step-box{
+                width: 29%;
+                aspect-ratio: 1 / 1;
+                border-radius: 50%;
+                padding: 80px 20px 20px;
+                background-color: #ffffffd4;
+                text-align: center;
+
+                h3{
+                    font-size: 28px;
+                    margin-bottom: 16px;
+                }
+            }
+        }
+
+    }/* ここまで.flow-step */
+
+    .to-question{
+        width: 320px;
+        height: 60px;
+        margin: 0 auto;
+        background-color: #f87b4e;
+        border-radius: 10px;
+        position: relative;
+        z-index: 2;
+
+        a{
+            text-align: center;
+            color: #fff;
+            display: block;
+            line-height: 60px;
+            border-radius: 10px;
+            transition: 0.2s;
+
+            &:hover{
+                box-shadow: 0 0 10px #999;
+            }
+        }
+    }
+
+}/* ここまで#flow */
+
+/* パーティクル部分 */
+#particles-js{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+}
+
+#shop{
+    padding: 100px 20px;
+    text-align: center;
+
+    h2{
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
+    >p{
+        font-size: 20px;
+        margin-bottom: 100px;
+    }
+
+    .shop-wrapper{
+        display: flex;
+        overflow: auto;
+        scroll-snap-type: x mandatory; //overflow: auto;と併せて使う。横に飛び出させるためのもの。
+        margin: 0 0 100px 10%;//ここでサイズ決めてる。spの時は％大きくする。
+        gap: 40px;
+
+        .shop-box{
+            flex: 0 0 30%;
+            background-color: $color_1;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+    }/* /.shop-wrapper */
+
+}/* ここまで#shop */
+
+
+/* news部分 */
+#news{
+    background-color: $color_1;
+    padding: 100px 10px;
+
+    .news-inner{
+        width: 80%;
+        margin: 0 auto 100px;
+
+        h2{
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+    }
+    
+}/* /#news */
+
+#news-list{
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 100px;
+    
+    dt{
+        width: 20%;
+        margin-bottom: 20px;
+    }
+    dd{
+        width: 80%;
+        margin-bottom: 20px;
+    }
+}/* ##news-list */
+
+
+/* カルーセル部分 */
+.carousel{
+    width: 90%;
+    margin: 0 auto;
+
+    li{
+        width: 100%;
+        aspect-ratio: 1 / 0.8;
+
+        img{
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+/* フッター部分 */
+footer{
+    width: 100%;
+    height: 100px;
+    background-color: $color_3;
+    position: relative;
+
+    p{
+        width: 80%;
+        margin: 0 auto;
+        line-height: 100px;
+    }
+
+    &::before{
+        width: 100%;
+        height: 180px;
+        display: block;
+        content: "";
+        background: url(../img/footer.svg) no-repeat center center/cover;
+        position: absolute;
+        top: -180px;
+        left: 0;
+    }
+}/* /footer */
+
+/* スムーススクロールの設定 */
+html{
+    scroll-behavior: smooth;
+}
+#item,#flow,#shop,#news{
+    scroll-margin-top: 100px;
+}
+
+/* 質問ページ部分 */
+.question-wrapper{
+    width: 80%;
+    margin: 100px auto 200px;
+
+    h2{
+        text-align: center;
+        margin-bottom: 50px;
+        font-size: 30px;
+    }
+
+    details{
+        background-color: $color_2;
+        padding: 20px;
+        margin-bottom: 60px;
+
+        summary>h3{
+            font-size: 24px;
+            margin-left: 18px;
+            cursor: pointer;
+
+            &::before{
+                content: "Q";
+                color: #d42c2c;
+                font-size: 26px;
+                margin-right: 10px;
+            }
+        }
+
+        summary:hover>h3{
+            text-decoration: underline 2px;
+            text-underline-offset: 3px;
+
+            &::before{
+                text-decoration: none;
+                display: inline-block;/* inlineだと駄目 */
+            }
+        }
+
+        .answer{
+            background-color: #FFF;
+            padding: 10px 40px;
+            font-size: 18px;
+            line-height: 2;
+            margin-top: 30px;
+
+            &::before{
+                content: "A";
+                color: #2b30c0;
+                font-size: 26px;
+                margin: 0 10px 0 -18px;
+                font-weight: bold;
+            }
+        }
+    }
+
+
+}/* ここまで/.question-wrapper */
+
+//黒い三角形を消す
+summary{
+    list-style: none;
+}
+
+summary::-webkit-details-marker {
+    display: none;//iOS仕様
+}
+
+/* 申込みページ部分 */
+.form-wrapper{
+    max-width: 800px;
+    margin: 100px auto 300px;
+
+    h2{
+        text-align: center;
+        font-size: 32px;
+        margin-bottom: 50px;
+    }
+}
+
+.form-step{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 100px;
+
+    li{
+        width: 24%;
+        aspect-ratio: 1 / 1;
+        background-color: $color_2;
+        border-radius: 50%;
+        text-align: center;
+        padding-top: 6%;
+        font-size: 18px;
+
+        span{
+            display: block;
+            font-size: 20px;
+            margin-top: 8px;
+        }
+    }
+    li.current{
+        background-color: $color_3;
+        color: #FFF;
+    }
+}
+
+dl{
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid $color_3;
+
+    dt{
+        width: 25%;
+        background-color: $color_3;
+        padding: 30px 20px;
+        color: #FFF;
+    }
+    dd{
+        width: 75%;
+        padding: 30px 20px;
+
+        &:nth-of-type(n+2){
+            border-top: 1px solid $color_3;
+        }
+    }
+
+}
+
+[type="text"],[type="email"]{
+    border: 1px solid $color_3;
+    padding: 6px;
+    width: 60%;
+}
+[type="radio"]{
+    scale: 1.8;
+    margin: 0 12px;
+    accent-color: $color_txt;
+}
+
+textarea{
+    border: 1px solid $color_3;
+    width: 80%;
+    height: 140px;
+    padding: 6px;
+}
+
+[type="submit"]{
+    display: block;
+    width: 240px;
+    width: 240px;
+    line-height: 60px;
+    background-color: $to_form;
+    margin: 40px auto 0;
+
+    &:hover{
+        background-color: #d6b56a;
+    }
+}

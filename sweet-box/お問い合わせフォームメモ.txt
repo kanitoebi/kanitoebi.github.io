@@ -1,0 +1,13 @@
+1,入力画面を作成
+2,確認画面を作成
+3,入力画面から確認画面にデータを送信
+4,確認画面からGoogleフォームにデータを送信
+5,Google formを作成(項目を必ず合わせる)
+6,Google formのaction属性(上から4番目)をconfirm.phpにコピペ
+7,Google formの各項目のname属性の値をコピーし、confirm.phpのinput type="hidden"のname属性にペースト
+
+
+F12　actionで検索　4つ目
+
+
+インスタ　#c53490
