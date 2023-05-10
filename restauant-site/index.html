@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>レストランサイトの制作</title>
+
+<!-- 英語の方のgoogle font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded&display=swap" rel="stylesheet">
+
+<!-- 日本語の方のgoogle font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=BIZ+UDPMincho&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/hamburgers.css">
+    <link rel="stylesheet" href="css/jquery.bxslider.css">
+    <link rel="stylesheet" href="css/lightbox.css">
+    <link rel="shortcut icon" href="favicon.png">
+    <link rel="apple-touch-icon" href="ticon.png">
+</head>
+
+<body id="top">
+    <header>
+        <h1><img src="img/logo.svg" alt=""></h1>
+    </header>
+
+    <p class="hamburger hamburger--stand" id="ham-btn">
+        <span class="hamburger-box">
+          <span class="hamburger-inner"></span>
+        </span>
+      </p>
+
+    <nav id="g-nav">
+        <div class="nav-img">
+            <img src="img/nav.jpg" alt="">
+        </div>
+        <ul>
+            <li><a href="#top" data-en="TOP">トップ</a></li>
+            <li><a href="#news" data-en="NEWS">お知らせ</a></li>
+            <li><a href="#video" data-en="VIDEO">動画</a></li>
+            <li><a href="#menu" data-en="MENU">メニュー</a></li>
+            <li><a href="#shop" data-en="SHOP">店舗情報</a></li>
+            <li><a href="#reserve" data-en="RESERVE">ご予約</a></li>
+        </ul>
+        <p class="nav-logo"><img src="img/logo.svg" alt=""></p>
+    </nav>
+
+    <div class="main-visual">
+        <ul class="bxslider">
+            <li><img src="img/slide01.jpg" alt=""></li>
+            <li><img src="img/slide02.jpg" alt=""></li>
+            <li><img src="img/slide03.jpg" alt=""></li>
+        </ul>
+    </div>
+
+    <main>
+        <div id="news">
+            <h2 data-en="NEWS">お知らせ</h2>
+            <dl id="news-list">
+                <!-- ここに外部化した.txtファイルでお知らせ本文入る。 -->
+            </dl>
+
+        </div><!-- /#news -->
+
+        <div id="video">
+            <h2 data-en="VIDEO">動画</h2>
+            <div class="video-wrapper">
+                <iframe class="ytube" src="https://www.youtube.com/embed/YjvmqUbPUq4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div><!-- video-wrapper -->
+        </div><!-- /#video -->
+
+        <div id="menu">
+            <h2 data-en="MENU">メニュー</h2>
+            <div class="scroll-wrapper">
+
+                <div class="scroll-box">
+                    <a href="img/menu01.jpg" data-lightbox="photo" data-title="トマトのナス包み"><!-- クリックすると出てくる画像。 -->
+                        <p class="photo">
+                            <img src="img/menu01.jpg" alt="">
+                        </p>
+                        <p class="txt">
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus commodi eum accusamus ipsam assumenda!
+                        </p>
+                    </a><!-- モーダル反映させたい範囲をaで囲む。 -->
+                </div><!-- scroll-box -->
+
+                <div class="scroll-box">
+                    <a href="img/menu02.jpg" data-lightbox="photo">
+                        <p class="photo">
+                            <img src="img/menu02.jpg" alt="">
+                        </p>
+                        <p class="txt">
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus commodi eum accusamus ipsam assumenda!
+                        </p>
+                    </a>
+                </div><!-- scroll-box -->
+
+                <div class="scroll-box">
+                    <a href="img/menu03.jpg" data-lightbox="photo">
+                        <p class="photo">
+                            <img src="img/menu03.jpg" alt="">
+                        </p>
+                        <p class="txt">
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus commodi eum accusamus ipsam assumenda!
+                        </p>
+                    </a>
+                </div><!-- scroll-box -->
+
+                <div class="scroll-box">
+                    <a href="img/menu04.jpg" data-lightbox="photo">
+                        <p class="photo">
+                            <img src="img/menu04.jpg" alt="">
+                        </p>
+                        <p class="txt">
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus commodi eum accusamus ipsam assumenda!
+                        </p>
+                    </a>
+                </div><!-- scroll-box -->
+
+                <div class="scroll-box">
+                    <a href="img/menu05.jpg" data-lightbox="photo">
+                        <p class="photo">
+                            <img src="img/menu05.jpg" alt="">
+                        </p>
+                        <p class="txt">
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus commodi eum accusamus ipsam assumenda!
+                        </p>
+                    </a>
+                </div><!-- scroll-box -->
+
+                <div class="scroll-box">
+                    <a href="img/menu06.jpg" data-lightbox="photo">
+                        <p class="photo">
+                            <img src="img/menu06.jpg" alt="">
+                        </p>
+                        <p class="txt">
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus commodi eum accusamus ipsam assumenda!
+                        </p>
+                    </a>
+                </div><!-- scroll-box -->
+
+            </div><!-- scroll-wrappe -->
+        </div><!-- /#menu -->
+
+        <div id="shop">
+            <h2 data-en="SHOP">店舗情報</h2>
+
+            <div class="shop-wrapper"> <!-- twitter -->
+                <div class="sns">
+                    <a class="twitter-timeline" data-width="350" data-height="500" href="https://twitter.com/city_toshima?ref_src=twsrc%5Etfw">Tweets by city_toshima</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                </div><!-- sns -->
+
+                <div class="map"> <!-- google map -->
+                    <iframe class="g-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3851.6303881248764!2d139.70773420022218!3d35.73059136689061!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188d5c44af41b3%3A0xaaf1d2675949ba97!2z5p2x5Lqs6Iq46KGT5YqH5aC0!5e0!3m2!1sja!2sjp!4v1675415014882!5m2!1sja!2sjp" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div><!-- map -->
+            </div><!-- shop-wrapper -->
+        </div><!-- /#shop -->
+
+        <div id="reserve">
+            <h2 data-en="RESERVE">ご予約</h2>
+
+            <div class="form"> <!-- googleフォーム -->
+                <iframe class="g-form" src="https://docs.google.com/forms/d/e/1FAIpQLSfgTuZnqOveMw5Z4OBhfhbk3y87yKZFem_F-Wa52V2JCdLCEQ/viewform?embedded=true" width="640" height="1302" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>
+            </div><!-- g-form -->
+
+        </div><!-- /#reserve -->
+
+    </main>
+
+    <footer>
+        <p><small>&copy; <span id="this-year"></span> FELICA</small></p>
+    </footer>
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js' integrity='sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==' crossorigin='anonymous'></script>
+
+    <script src="js/jquery.bxslider.js"></script>
+
+    <script src="js/lightbox.js"></script>
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>
