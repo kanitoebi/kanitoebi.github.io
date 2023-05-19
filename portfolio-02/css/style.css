@@ -261,7 +261,7 @@ header {
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   position: fixed;
-  top: 20px;
+  top: 10px;
   left: 0;
   right: 0;
   margin: auto;
@@ -295,11 +295,16 @@ h1 a {
 #g-nav ul li a {
   color: #222;
   padding: 20px 14px;
+  font-size: 18px;
 }
 #g-nav ul li a:hover {
-  -webkit-text-decoration: underline 2px;
-          text-decoration: underline 2px;
+  /* text-decoration: underline 2px; */
   text-underline-offset: 2px;
+  padding: 18px 14px;
+  background-color: rgba(153, 28, 255, 0.2980392157);
+  color: #FFF;
+  /* border-radius: 30px; */
+  transition: 0.3s;
 }
 
 /* #g-nav */
@@ -378,24 +383,83 @@ h1 a {
 }
 
 /* スキル */
+#slil {
+  width: 100%;
+}
+
 .skil-wrapper {
   padding: 30px;
+  /*セロテープ風*/
+}
+.skil-wrapper .skil-setsumei {
+  width: calc(25% - 10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2941176471);
+  box-shadow: 0 5px 4px #d8d8d8;
+  margin: 30px auto; /* ボックスの余白 */
+  background-color: #e2dddd; /* ボックス背景色 */
+  padding: 40px 10px 20px; /* ボックス内側余白 */
+  position: relative; /* 配置(ここを基準に) */
+}
+.skil-wrapper .skil-setsumei .skil-name {
+  background-color: rgba(255, 255, 255, 0.2235294118); /* テープ背景色と透過*/
+  border-left: 2px dotted rgba(0, 0, 0, 0.1); /* テープのギザギザ左*/
+  border-right: 2px dotted rgba(0, 0, 0, 0.1); /* テープのギザギザ右*/
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2470588235); /*テープ影*/
+  transform: rotate(-2deg); /*テープの傾き*/
+  font-size: 1.4em; /*タイトル文字の大きさ*/
+  color: #222; /*タイトル文字色 */
+  padding: 10px 20px; /*タイトルの余白*/
+  line-height: 1; /*タイトルの行の高さ*/
+  position: absolute; /*配置(ここを動かす)*/
+  top: -20px; /*上から（-10px）移動*/
+  left: 20px; /*左から(20px)移動*/
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
 }
 .skil-wrapper .skil-waku {
-  width: 90%;
+  width: 96%;
   height: 100%;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
-.skil-wrapper .skil-waku img {
-  width: calc(25% - 10px);
+.skil-wrapper .skil-setsumei {
+  /* width: calc(25% - 10px);
   margin-bottom: 20px;
-  padding: 0 6px;
+  padding: 10px;
+  background-color: #e2dddd;
+  border-radius: 10px; */
+  /* border: 1px solid#1D1A2F; */
 }
-.skil-wrapper .skil-waku img:last-child {
-  margin-bottom: 0;
+.skil-wrapper .skil-setsumei .skil-name {
+  /* width: 90%;
+  margin: 10px auto;
+  text-align: center;
+  font-size: 1.4em;
+  color: #766464;
+  background-color: #ffffff;
+
+  border-bottom: 2px solid #90d4ff; */
+}
+.skil-wrapper .skil-setsumei .skil-img {
+  width: 90%;
+  /* height: 270px; */
+  padding: 4px;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 20px;
+}
+.skil-wrapper .skil-setsumei .skil-img img {
+  padding: 10px;
+}
+.skil-wrapper .skil-setsumei .skil-txt {
+  width: 90%;
+  height: 100px;
+  margin: 10px auto;
+  padding: 6px;
+  /* background-color: #fff; */
+  /* border-radius: 20px; */
 }
 
 /* サイト */
@@ -423,7 +487,7 @@ h1 a {
 .banner-wrapper {
   display: flex;
   /* max-width: 1200px; */
-  width: 100%;
+  width: 96%;
   padding: 0 10px;
   margin: 50px auto;
   justify-content: space-between;
@@ -432,7 +496,7 @@ h1 a {
 }
 
 .benner-box {
-  width: 48%;
+  width: 46%;
   padding: 20px;
   margin: 20px;
   background-color: #fff;
@@ -477,9 +541,9 @@ h1 a {
 .benner-box span::before {
   display: inline-block;
   content: "";
-  width: 40px;
-  height: 40px;
-  margin-right: 10px;
+  width: 36px;
+  height: 36px;
+  margin-right: 6px;
 }
 
 /* USENのバナー */
@@ -589,7 +653,7 @@ h1 a {
 }
 /* イラスト ★*/
 #illust .image-grid {
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
@@ -599,6 +663,10 @@ h1 a {
 #illust .image-grid img {
   width: calc(50% - 10px);
   margin-bottom: 20px;
+  transition: transform 0.3s ease;
+}
+#illust .image-grid img:hover {
+  transform: scale(1.2);
 }
 
 /* #illust .image-grid img:last-child {
