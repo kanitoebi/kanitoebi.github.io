@@ -1,0 +1,614 @@
+@charset "UTF-8";
+html {
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+}
+
+*, :after, :before {
+  background-repeat: no-repeat;
+  box-sizing: inherit;
+}
+
+:after, :before {
+  text-decoration: inherit;
+  vertical-align: inherit;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+hr {
+  overflow: visible;
+}
+
+article, aside, details, figcaption, figure, footer, header, main, menu, nav, section, summary {
+  display: block;
+}
+
+summary {
+  display: list-item;
+}
+
+small {
+  font-size: 80%;
+}
+
+[hidden], template {
+  display: none;
+}
+
+abbr[title] {
+  border-bottom: 1px dotted;
+  text-decoration: none;
+}
+
+a {
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects;
+}
+
+a:active, a:hover {
+  outline-width: 0;
+}
+
+code, kbd, pre, samp {
+  font-family: monospace, monospace;
+}
+
+b, strong {
+  font-weight: bolder;
+}
+
+dfn {
+  font-style: italic;
+}
+
+mark {
+  background-color: #ff0;
+  color: #000;
+}
+
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+input {
+  border-radius: 0;
+}
+
+[role=button], [type=button], [type=reset], [type=submit], button {
+  cursor: pointer;
+}
+
+[disabled] {
+  cursor: default;
+}
+
+[type=number] {
+  width: auto;
+}
+
+[type=search][type=search]::-webkit-search-cancel-button, [type=search]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+textarea {
+  overflow: auto;
+  resize: vertical;
+}
+
+button, input, optgroup, select, textarea {
+  font: inherit;
+}
+
+optgroup {
+  font-weight: 700;
+}
+
+button {
+  overflow: visible;
+}
+
+[type=button]::-moz-focus-inner, [type=reset]::-moz-focus-inner, [type=submit]::-moz-focus-inner, button::-moz-focus-inner {
+  border-style: 0;
+  padding: 0;
+}
+
+[type=button]::-moz-focus-inner, [type=reset]::-moz-focus-inner, [type=submit]::-moz-focus-inner, button:-moz-focusring {
+  outline: 1px dotted;
+}
+
+[type=reset], [type=submit], button, html [type=button] button, select {
+  text-transform: none;
+}
+
+button, input, select, textarea {
+  background-color: transparent;
+  border-style: none;
+  color: inherit;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+select::-ms-value {
+  color: currentColor;
+}
+
+legend {
+  border: 0;
+  color: inherit;
+  display: table;
+  max-width: 100%;
+  white-space: normal;
+}
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font: inherit;
+}
+
+[type=search] img {
+  border-style: none;
+  vertical-align: bottom;
+}
+
+progress {
+  vertical-align: baseline;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+audio, canvas, progress, video {
+  display: inline-block;
+}
+
+@media screen {
+  [hidden~=screen] {
+    display: inherit;
+  }
+  [hidden~=screen]:not(:active):not(:focus):not(:target) {
+    position: absolute !important;
+    clip: rect(0 0 0 0) !important;
+  }
+}
+[aria-busy=true] {
+  cursor: progress;
+}
+
+[aria-controls] {
+  cursor: pointer;
+}
+
+[aria-disabled] {
+  cursor: default;
+}
+
+::-moz-selection {
+  background-color: #b3d4fc;
+  color: #000;
+  text-shadow: none;
+}
+
+::selection {
+  background-color: #b3d4fc;
+  color: #000;
+  text-shadow: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: bottom;
+}
+
+html {
+  scroll-behavior: smooth;
+  color: #2c2c2c;
+}
+
+main {
+  max-width: 1200px;
+  margin: 30px auto;
+}
+
+h2 {
+  color: #ffffff;
+  text-align: center;
+  padding: 10px;
+  width: 40%;
+  /* border-bottom: 5px solid #71bbd1; */
+  margin: 200px auto 30px;
+  border-radius: 10px;
+  background: rgb(221, 215, 230);
+  background: linear-gradient(180deg, rgb(241, 131, 182) 0%, rgb(229, 157, 235) 100%);
+  /* box-shadow: 0 6px 8px #dcd2e0; */
+}
+
+header {
+  width: 96%;
+  height: 70px;
+  background-color: rgba(255, 255, 255, 0.6666666667);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  position: fixed;
+  top: 20px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 10;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 0 8px #717171;
+}
+
+h1 {
+  width: 25%;
+  padding-left: 20px;
+}
+h1 a {
+  color: #222;
+}
+
+#g-nav {
+  width: 75%;
+}
+#g-nav ul {
+  display: flex;
+  justify-content: right;
+  position: relative;
+}
+#g-nav ul li {
+  margin: 0 14px;
+}
+#g-nav ul li a {
+  color: #222;
+  padding: 20px 14px;
+}
+#g-nav ul li a:hover {
+  -webkit-text-decoration: underline 2px;
+          text-decoration: underline 2px;
+  text-underline-offset: 2px;
+}
+
+/* #g-nav */
+/* .drop-menu{
+    position: absolute;
+    left: 0;
+    top: 40px;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.4s;
+    .drop-inner{
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 10px;
+    height: 160px;
+    margin-top: 20px;
+    box-shadow: 0 0 8px #717171;
+    }
+    p{
+    margin: 0 40px;
+    }
+    img{
+    display: block;
+    margin-bottom: 6px;
+    }
+} */ /* /.drop-menu */
+/* #g-nav li:hover>.drop-menu{
+    opacity: 1;
+    visibility: visible;
+} */
+#profile {
+  max-width: 100%;
+}
+#profile .myname {
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+#profile .prf {
+  text-align: center;
+}
+#profile .timeline {
+  /* background-color: #43C625; */
+  padding: 20px;
+  margin: 30px auto;
+  text-align: center;
+}
+#profile .timeline p {
+  /* background-color: #1c9296; */
+}
+#profile .timeline p a {
+  background-color: #df604a;
+  padding: 16px 50px;
+  color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 0 8px #717171;
+}
+#profile .timeline p a:hover {
+  background-color: #7b8ef8;
+}
+
+.main-visual {
+  width: 100%;
+  height: 50vh;
+  margin-bottom: 200px;
+  background: rgb(255, 173, 246);
+  background: radial-gradient(circle, rgb(255, 173, 246) 0%, rgb(51, 161, 255) 100%);
+}
+
+.main-visual > img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 50vh;
+}
+
+/* スキル */
+.skil-wrapper {
+  padding: 30px;
+}
+.skil-wrapper .skil-waku {
+  width: 90%;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.skil-wrapper .skil-waku img {
+  width: calc(25% - 10px);
+  margin-bottom: 20px;
+  padding: 0 6px;
+}
+.skil-wrapper .skil-waku img:last-child {
+  margin-bottom: 0;
+}
+
+/* サイト */
+.sitebtn {
+  /* background-color: #43C625; */
+  padding: 20px;
+  margin: 30px auto;
+  text-align: center;
+}
+.sitebtn p {
+  /* background-color: #1c9296; */
+}
+.sitebtn p a {
+  background-color: #df604a;
+  padding: 20px 50px;
+  color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 0 8px #717171;
+}
+.sitebtn p a:hover {
+  background-color: #7b8ef8;
+}
+
+/* バナー */
+.banner-wrapper {
+  display: flex;
+  /* max-width: 1200px; */
+  width: 100%;
+  padding: 0 10px;
+  margin: 50px auto;
+  justify-content: space-between;
+  border: 2px solid #90d4ff;
+  background-color: #e2dddd;
+}
+
+.benner-box {
+  width: 48%;
+  padding: 20px;
+  margin: 20px;
+  background-color: #fff;
+}
+
+.benner-box > h3 {
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.benner-box > p {
+  height: 250px; /*  */
+}
+
+.banner-pc {
+  width: 300px;
+}
+
+.banner-sp {
+  width: 320px;
+}
+
+.benner-box > dl {
+  margin: 20px 0;
+}
+
+.benner-box dt {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.benner-box dd {
+  margin-bottom: 16px;
+}
+
+/* カラー情報 */
+.benner-box span {
+  margin-right: 20px;
+  font-size: 20px;
+}
+
+.benner-box span::before {
+  display: inline-block;
+  content: "";
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+/* USENのバナー */
+.usen > .benner-box span:first-of-type::before {
+  background-color: #43C625;
+}
+
+.usen > .benner-box span:nth-of-type(2)::before {
+  background-color: #FFFF00;
+}
+
+.usen > .benner-box span:nth-of-type(3)::before {
+  background-color: #FF6900;
+}
+
+/* 和菓子のバナー */
+.wagashi > .benner-box span:first-of-type::before {
+  background-color: #ffe9e8;
+  border: 1px solid #333;
+}
+
+.wagashi > .benner-box span:nth-of-type(2)::before {
+  background-color: #fa7777;
+}
+
+.wagashi > .benner-box span:nth-of-type(3)::before {
+  background-color: #342628;
+}
+
+/* 加茂水族館のバナー */
+.kamosui > .benner-box span:first-of-type::before {
+  background-color: #2b3399;
+}
+
+.kamosui > .benner-box span:nth-of-type(2)::before {
+  background-color: #ffd100;
+}
+
+.kamosui > .benner-box span:nth-of-type(3)::before {
+  background-color: #71bbd1;
+}
+
+/* ZOZOのバナー */
+.zozo > .benner-box span:first-of-type::before {
+  background-color: #ffffeb;
+  border: 1px solid #333;
+}
+
+.zozo > .benner-box span:nth-of-type(2)::before {
+  background-color: #ff6c85;
+}
+
+.zozo > .benner-box span:nth-of-type(3)::before {
+  background-color: #403934;
+}
+
+/* wagashigifのバナー */
+.zozo > .wagashigif span:first-of-type::before {
+  background-color: #ffffff;
+  border: 1px solid #333;
+}
+
+.zozo > .wagashigif span:nth-of-type(2)::before {
+  background-color: #765a23;
+}
+
+/* summerのバナー */
+.summer > .summerbn span:first-of-type::before {
+  background-color: #ffffff;
+  border: 1px solid #333;
+}
+
+.summer > .summerbn span:nth-of-type(2)::before {
+  background-color: #38434d;
+}
+
+/* xmasのバナー */
+.summer > .xmasbn span:first-of-type::before {
+  background-color: #1D1A2F;
+  /* border: 1px solid #333; */
+}
+
+.summer > .xmasbn span:nth-of-type(2)::before {
+  background-color: #56324C;
+}
+
+.summer > .xmasbn span:nth-of-type(3)::before {
+  background-color: #E22625;
+}
+
+@media (max-width: 767px) {
+  .banner-wrapper {
+    display: block;
+    width: 100%;
+  }
+  .benner-box {
+    width: 90%;
+    margin: 50px auto;
+  }
+  .benner-box > p {
+    margin: 0 auto;
+  }
+  .benner-box span {
+    display: block;
+    margin-bottom: 10px;
+  }
+}
+/* イラスト ★*/
+#illust .image-grid {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#illust .image-grid img {
+  width: calc(50% - 10px);
+  margin-bottom: 20px;
+}
+
+/* #illust .image-grid img:last-child {
+  margin-bottom: 0;
+} */
+.parent {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  background-color: #794d4d;
+}/*# sourceMappingURL=style.css.map */
