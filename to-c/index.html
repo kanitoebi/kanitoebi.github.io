@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>to-Cサイトの作成</title>
+    <link rel="stylesheet" href="css/style.css">
+    
+</head>
+
+<body id="top">
+    <header>
+        <h1>焼肉モダン</h1>
+        <p class="tag-line">焼肉をモダンに、おしゃれに。極上の焼肉体験を</p>
+        <p class="logo">ロゴ</p>
+        
+    </header>
+
+    <div class="circle">
+            <img src="img/circle.svg" alt="">
+        </div>
+
+    <nav class="pc-nav">
+        <ul>
+            <li><a href="#top">トップ</a></li>
+            <li><a href="#item">お品書き</a></li>
+            <li><a href="#shop">お店について</a></li>
+            <li><a href="#faq">よくある質問</a></li>
+            <li><a href="#staff">ごあいさつ</a></li>
+            <li class="slide"></li>
+        </ul>
+
+    </nav>
+
+
+    <div class="container">
+        <input type="checkbox" id="ham-btn">
+        <label for="ham-btn" class="circle-btn">
+            <span class="ham-bar"></span>
+        </label>
+
+        <nav class="sp-nav">
+            <ul>
+                <li><a href="#top">トップ</a></li>
+                <li><a href="#item">お品書き</a></li>
+                <li><a href="#shop">お店について</a></li>
+                <li><a href="#faq">よくある質問</a></li>
+                <li><a href="#staff">ごあいさつ</a></li>
+                <li><a href="https://translate.google.com/translate?sl=ja&tl=en&u=http://ebitokani.starfree.jp/to-c/" target="_blank">to English</a></li>
+            </ul>
+        </nav><!-- /.sp-nav -->
+
+
+        <div class="main-visual">
+            <p><img src="img/main-01.webp" alt=""></p>
+            <p><img src="img/main-02.webp" alt=""></p>
+        </div><!-- /.main-visual -->
+
+
+        <div class="main-copy">
+
+        </div><!-- /.main-copy -->
+
+
+        <section id="item">
+            <h2>お品書き</h2>
+            <div class="grid-wrapper">
+
+                <div class="grid-box">
+                    <h3 class="item-name">商品名1</h3>
+                    <p class="item-photo"><img src="img/syouhin-01.webp" alt=""></p>
+                    <p class="price">1人前:1000円</p>
+                </div><!-- .grid-box -->
+
+                <div class="grid-box">
+                    <h3 class="item-name">商品名2</h3>
+                    <p class="item-photo"><img src="img/syouhin-02.webp" alt=""></p>
+                    <p class="price">1人前:1000円</p>
+                </div><!-- .grid-box -->
+
+                <div class="grid-box">
+                    <h3 class="item-name">商品名3</h3>
+                    <p class="item-photo"><img src="img/syouhin-03.webp" alt=""></p>
+                    <p class="price">1人前:1000円</p>
+                </div><!-- .grid-box -->
+
+                <div class="grid-box">
+                    <h3 class="item-name">商品名4</h3>
+                    <p class="item-photo"><img src="img/syouhin-04.webp" alt=""></p>
+                    <p class="price">1人前:1000円</p>
+                </div><!-- .grid-box -->
+
+                <div class="grid-box">
+                    <h3 class="item-name">商品名5</h3>
+                    <p class="item-photo"><img src="img/syouhin-05.webp" alt=""></p>
+                    <p class="price">1人前:1000円</p>
+                </div><!-- .grid-box -->
+
+                <div class="grid-box">
+                    <h3 class="item-name">商品名6</h3>
+                    <p class="item-photo"><img src="img/syouhin-06.webp" alt=""></p>
+                    <p class="price">1人前:1000円</p>
+                </div><!-- .grid-box -->
+
+                <div class="grid-box">
+                    <h3 class="item-name">商品名7</h3>
+                    <p class="item-photo"><img src="img/syouhin-07.webp" alt=""></p>
+                    <p class="price">1人前:1000円</p>
+                </div><!-- .grid-box -->
+
+                <div class="grid-box">
+                    <h3 class="item-name">商品名8</h3>
+                    <p class="item-photo"><img src="img/syouhin-08.webp" alt=""></p>
+                    <p class="price">1人前:1000円</p>
+                </div><!-- .grid-box -->
+
+                <div class="grid-box">
+                    <h3 class="item-name">商品名9</h3>
+                    <p class="item-photo"><img src="img/syouhin-09.webp" alt=""></p>
+                    <p class="price">1人前:1000円</p>
+                </div><!-- .grid-box -->
+            </div><!-- /.grid-wrapper -->
+        </section><!-- /#item -->
+
+        <section id="shop">
+            <h2>お店について</h2>
+        </section><!-- /#item -->
+
+        <section id="faq">
+            <h2>よくある質問</h2>
+        </section><!-- /#faq -->
+
+        <section id="staff">
+            <h2>ごあいさつ</h2>
+        </section><!-- /#staff -->
+
+        <footer></footer>
+    </div><!-- container -->
+
+
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js' integrity='sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==' crossorigin='anonymous'></script>
+
+        <script>
+            /* jqueryで.sp-nav aをクリックしたら、.sp-navを閉じる */
+            $('.sp-nav a').on('click',function(){
+                $('#ham-btn').prop('checked',false);
+            });
+        </script>
+    
+</body>
+</html>
